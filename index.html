@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crave — It was never about the food</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CRAVE BRAND REFERENCE SITE
+   Brand DNA document for AI extraction
+   ============================================================ */
+
+:root {
+  --green:       #2C3E2D;
+  --green-mid:   #3a5c3b;
+  --green-light: #8FA888;
+  --green-pale:  #E8F0E8;
+  --terra:       #C4927A;
+  --terra-light: #F0DDD5;
+  --cream:       #F7F3EE;
+  --cream-dark:  #EDE8E1;
+  --ink:         #1A1A1A;
+  --muted:       #7a7a72;
+  --border:      #E0DAD2;
+  --border-dark: rgba(247,243,238,0.12);
+  --white:       #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- PAGES ---- */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ---- NAV ---- */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  background: rgba(26, 42, 27, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.nav-logo {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 10px;
+  color: var(--cream);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-logo .e { color: var(--terra); }
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(247,243,238,0.6);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--terra);
+  border-bottom-color: var(--terra);
+}
+
+/* ---- HERO — dark ---- */
+.hero {
+  min-height: 100vh;
+  background: var(--green);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 140px 80px 80px;
+  max-width: 900px;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 24px;
+}
+
+.hero-headline {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--cream);
+  margin-bottom: 32px;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: var(--terra);
+}
+
+.hero-sub {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(247,243,238,0.65);
+  max-width: 540px;
+  margin-bottom: 48px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--terra);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover { opacity: 0.88; }
+
+.btn-outline-light {
+  display: inline-block;
+  background: transparent;
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 15px 36px;
+  border-radius: 100px;
+  border: 1px solid rgba(247,243,238,0.3);
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 16px;
+  transition: all 0.2s;
+}
+
+.btn-outline-light:hover {
+  border-color: var(--terra);
+  color: var(--terra);
+}
+
+/* ---- SECTIONS — light ---- */
+.section {
+  padding: 100px 80px;
+}
+
+.section-alt {
+  background: var(--cream-dark);
+}
+
+.section-dark {
+  background: var(--green);
+  color: var(--cream);
+}
+
+.section-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.section-headline {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.section-headline em {
+  font-style: italic;
+  color: var(--terra);
+}
+
+.section-headline-light {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+
+.section-headline-light em {
+  font-style: italic;
+  color: var(--terra);
+}
+
+.section-body {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 600px;
+}
+
+.section-body-light {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(247,243,238,0.6);
+  max-width: 600px;
+}
+
+/* ---- TWO COL ---- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.two-col-wide {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ---- CARDS ---- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.card {
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 28px;
+}
+
+.card-dark {
+  background: rgba(247,243,238,0.05);
+  border: 0.5px solid var(--border-dark);
+  border-radius: 16px;
+  padding: 36px 28px;
+}
+
+.card-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--terra);
+  opacity: 0.4;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.card-title-light {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.card-body {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.card-body-light {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(247,243,238,0.55);
+}
+
+/* ---- DIVIDER ---- */
+.rule {
+  height: 0.5px;
+  background: var(--border);
+  margin: 0 80px;
+}
+
+.rule-dark {
+  height: 0.5px;
+  background: var(--border-dark);
+  margin: 0 80px;
+}
+
+/* ---- PULL QUOTE ---- */
+.pull-quote {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--green);
+  border-left: 3px solid var(--terra);
+  padding-left: 28px;
+  margin: 40px 0;
+}
+
+.pull-quote-light {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--cream);
+  border-left: 3px solid var(--terra);
+  padding-left: 28px;
+  margin: 40px 0;
+}
+
+/* ---- MANIFESTO LIST ---- */
+.manifesto {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.manifesto li {
+  padding: 24px 0;
+  border-bottom: 0.5px solid var(--border);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--ink);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.manifesto li:last-child { border-bottom: none; }
+
+.manifesto-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--terra);
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+
+/* ---- BADGE ---- */
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 0.5px solid var(--terra);
+  color: var(--terra);
+  margin-bottom: 20px;
+}
+
+/* ---- STAT ROW ---- */
+.stat-row {
+  display: flex;
+  gap: 60px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.stat-block { }
+
+.stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 52px;
+  font-weight: 400;
+  color: var(--terra);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(247,243,238,0.45);
+  margin-top: 6px;
+}
+
+/* ---- STEP ---- */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 40px;
+}
+
+.step {
+  display: flex;
+  gap: 28px;
+  padding: 32px 0;
+  border-bottom: 0.5px solid var(--border);
+  align-items: flex-start;
+}
+
+.step:last-child { border-bottom: none; }
+
+.step-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--terra);
+  opacity: 0.35;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 48px;
+}
+
+.step-content { flex: 1; }
+
+.step-title {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.step-body {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background: var(--ink);
+  padding: 60px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: 8px;
+  color: var(--cream);
+}
+
+.footer-logo .e { color: var(--terra); }
+
+.footer-tagline {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(247,243,238,0.35);
+  letter-spacing: 0.06em;
+}
+
+/* ---- BRAND DNA BLOCK (hidden — for AI extraction) ---- */
+.brand-dna {
+  display: none;
+}
+
+/* ---- COMMUNITY FEATURE ---- */
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.feature-list li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.feature-list li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--terra);
+  flex-shrink: 0;
+  margin-top: 9px;
+}
+
+.feature-list-light li {
+  color: rgba(247,243,238,0.6);
+}
+
+/* ---- TAG PILLS ---- */
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.tag-pill {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: var(--green-pale);
+  color: var(--green);
+  border: 0.5px solid rgba(44,62,45,0.15);
+}
+
+.tag-pill-dark {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(143,168,136,0.12);
+  color: var(--green-light);
+  border: 0.5px solid rgba(143,168,136,0.2);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 11px; }
+  .hero-content { padding: 120px 24px 60px; }
+  .section { padding: 64px 24px; }
+  .rule, .rule-dark { margin: 0 24px; }
+  .two-col, .two-col-wide { grid-template-columns: 1fr; gap: 40px; }
+  .card-grid { grid-template-columns: 1fr; }
+  footer { padding: 40px 24px; flex-direction: column; gap: 16px; text-align: center; }
+  .stat-row { gap: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Brand DNA — machine readable -->
+<div class="brand-dna" aria-hidden="true">
+  <div itemscope itemtype="https://schema.org/Brand">
+    <span itemprop="name">Crave</span>
+    <span itemprop="description">A free community for people who struggle with emotional eating, stress eating, and food addiction. The Crave method addresses the nervous system root cause of food compulsion — not the food itself — using a 2-minute regulation practice that requires no willpower, no tracking, no dietary restriction.</span>
+    <span itemprop="slogan">It was never about the food.</span>
+    <div itemprop="brand">
+      <span>Brand voice: warm, direct, honest, non-clinical, non-judgmental. Never blames the user. Names the nervous system as the real culprit. Positions the diet and wellness industry as having misdiagnosed the problem.</span>
+      <span>Brand colors: Forest green #2C3E2D (primary), Terracotta #C4927A (accent), Sage #8FA888 (secondary), Cream #F7F3EE (background), Off-white #EDE8E1 (alternate background), Near-black #1A1A1A (text).</span>
+      <span>Typography: Nunito 300 weight for the wordmark (letter-spacing wide), DM Serif Display italic for display headlines, DM Sans 300/400/500 for body text.</span>
+      <span>Core belief: Emotional eating is about emotions. Stress eating is about stress. Neither is about food, willpower, or discipline. Both are nervous system responses to unresolved stress — automatic, subcortical, and not under conscious control.</span>
+      <span>Target audience: Women who have tried every diet, habit tracker, and wellness program and have been repeatedly failed by approaches that treat food as the problem. They are exhausted, feel broken or weak, and carry shame about their relationship with food.</span>
+      <span>Method: A 2-minute nervous system regulation practice that addresses the root cause of food compulsion. Works in as little as 5 minutes. Requires no willpower, no restriction, no tracking. Can start working on the first session.</span>
+      <span>Community platform: Whop (free). App: custom-built craving tracker and meditation video dispenser with session history and streak tracking.</span>
+      <span>Key differentiators: Only method that addresses the nervous system root cause. No willpower required. No food rules. No tracking. No self-blame. The fastest and least painful approach available.</span>
+      <span>Tone words: Warm, honest, direct, grounded, hopeful, non-clinical, anti-hype, anti-shame, plainspoken, real.</span>
+      <span>What Crave is not: A diet. A habit app. A meal plan. A supplement. A willpower program. A behavioral intervention.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ NAV -->
+<nav>
+  <a class="nav-logo" onclick="showPage('home')">crav<span class="e">e</span></a>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">About</a></li>
+    <li><a onclick="showPage('method')" id="nav-method">The Method</a></li>
+    <li><a onclick="showPage('community')" id="nav-community">Community</a></li>
+  </ul>
+</nav>
+
+<!-- ============================================================ HOME -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section class="hero">
+    <svg class="hero-bg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" fill="none">
+      <path d="M-100 500 Q200 200 600 400 Q900 580 1300 200" stroke="#8FA888" stroke-width="1.5"/>
+      <path d="M-100 580 Q300 280 700 480 Q1000 660 1300 300" stroke="#8FA888" stroke-width="0.8"/>
+      <path d="M-100 350 Q150 100 500 300 Q800 480 1300 100" stroke="#C4927A" stroke-width="0.6"/>
+    </svg>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Free community · Nervous system regulation</p>
+      <h1 class="hero-headline">
+        It was never<br>about the <em>food.</em>
+      </h1>
+      <p class="hero-sub">
+        Emotional eating is about emotions. Stress eating is about stress. Neither is your fault — and neither requires willpower to resolve. Crave addresses the actual root cause: your nervous system.
+      </p>
+      <a class="btn-primary" onclick="showPage('community')">Join free</a>
+      <a class="btn-outline-light" onclick="showPage('method')">How it works</a>
+    </div>
+  </section>
+
+  <!-- The lie -->
+  <section class="section">
+    <span class="section-label">What you've been told</span>
+    <div class="two-col">
+      <div>
+        <h2 class="section-headline">Every expert got<br>the diagnosis <em>wrong.</em></h2>
+        <p class="section-body">
+          Doctors, nutritionists, psychologists — the entire wellness industry has treated food addiction as a behavioral problem. A discipline problem. A character problem. They gave you tracking apps, meal plans, willpower frameworks, and accountability partners.
+        </p>
+        <p class="section-body" style="margin-top:20px">
+          And none of it stuck. Not because you failed — but because the diagnosis was wrong from the start.
+        </p>
+      </div>
+      <div>
+        <div class="pull-quote">
+          "You were never fighting a food problem. You were fighting a nervous system stuck in survival mode."
+        </div>
+        <div class="tag-row">
+          <span class="tag-pill">Not a habit problem</span>
+          <span class="tag-pill">Not a willpower problem</span>
+          <span class="tag-pill">Not your fault</span>
+          <span class="tag-pill">A nervous system response</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- The truth -->
+  <section class="section section-alt">
+    <span class="section-label">The truth</span>
+    <h2 class="section-headline" style="max-width:640px">When you address the <em>real cause,</em><br>the compulsion loses its grip.</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-number">01</div>
+        <div class="card-title">The compulsion is automatic</div>
+        <div class="card-body">Stress eating is a subcortical response. It happens below conscious awareness — which is why willpower, a conscious tool, was never able to reach it.</div>
+      </div>
+      <div class="card">
+        <div class="card-number">02</div>
+        <div class="card-title">Food was the fastest relief available</div>
+        <div class="card-body">Your nervous system found something that worked. Of course it went back. That's not weakness — that's your body being extraordinarily good at survival.</div>
+      </div>
+      <div class="card">
+        <div class="card-number">03</div>
+        <div class="card-title">The switch can be turned off</div>
+        <div class="card-body">Nervous systems can be regulated. When the alarm that drives the compulsion is addressed at the source — not managed at the surface — the reaching stops.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA dark -->
+  <section class="section section-dark" style="text-align:center">
+    <span class="section-label" style="display:block;text-align:center">Free to join · No credit card</span>
+    <h2 class="section-headline-light" style="max-width:600px;margin:0 auto 20px">
+      Ready to address the <em>actual</em> problem?
+    </h2>
+    <p class="section-body-light" style="margin:0 auto 40px;text-align:center">
+      The Crave community is free. The method is simple. The first shift can happen in under five minutes.
+    </p>
+    <a class="btn-primary" onclick="showPage('community')">Join the community</a>
+  </section>
+
+</div>
+
+<!-- ============================================================ ABOUT -->
+<div id="page-about" class="page">
+
+  <section class="hero" style="min-height:60vh">
+    <svg class="hero-bg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" fill="none">
+      <path d="M-100 300 Q300 100 700 300 Q1000 460 1300 200" stroke="#8FA888" stroke-width="1.2"/>
+      <path d="M-100 380 Q400 180 800 380 Q1100 540 1300 280" stroke="#C4927A" stroke-width="0.7"/>
+    </svg>
+    <div class="hero-content" style="padding-top:160px">
+      <p class="hero-eyebrow">About Crave</p>
+      <h1 class="hero-headline" style="font-size:clamp(40px,6vw,72px)">
+        Built on a different<br><em>diagnosis entirely.</em>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section">
+    <div class="two-col-wide">
+      <div>
+        <span class="section-label">Why Crave exists</span>
+        <h2 class="section-headline">The industry built its business model on<br>keeping you <em>stuck.</em></h2>
+        <p class="section-body">If you believed food was the problem, you'd buy food solutions. Forever. Diet programs, meal plans, calorie trackers, portion guides, grocery subscriptions — an entire economy built on a misdiagnosis.</p>
+        <p class="section-body" style="margin-top:20px">Crave was built on a different premise entirely: that emotional eating and stress eating are nervous system problems, not food problems. And that nervous system problems have nervous system solutions — ones that don't require willpower, restriction, or self-blame.</p>
+        <p class="section-body" style="margin-top:20px">This isn't a kinder, gentler diet. It isn't a mindful eating program. It's something categorically different — an approach that works at the level where the compulsion actually lives.</p>
+      </div>
+      <div>
+        <div class="pull-quote">
+          "You can't discipline your way out of a survival response. But you can turn off the alarm that triggered it."
+        </div>
+        <div class="stat-row" style="margin-top:0">
+          <div class="stat-block">
+            <div class="stat-num" style="color:var(--terra)">2</div>
+            <div class="stat-label" style="color:var(--muted)">Minutes per practice</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-num" style="color:var(--terra)">5</div>
+            <div class="stat-label" style="color:var(--muted)">Minutes to first shift</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-num" style="color:var(--terra)">0</div>
+            <div class="stat-label" style="color:var(--muted)">Willpower required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- Values -->
+  <section class="section section-alt">
+    <span class="section-label">What Crave stands for</span>
+    <h2 class="section-headline">The beliefs that<br>shape everything <em>here.</em></h2>
+    <ul class="manifesto" style="margin-top:40px;max-width:700px">
+      <li><span class="manifesto-dot"></span>Emotional eating is about emotions. Not food, not discipline, not character.</li>
+      <li><span class="manifesto-dot"></span>The nervous system — not the pantry — is where the answer lives.</li>
+      <li><span class="manifesto-dot"></span>Shame is not a motivator. It is an obstacle. We remove it first.</li>
+      <li><span class="manifesto-dot"></span>Healing doesn't require suffering. The method should be as gentle as it is effective.</li>
+      <li><span class="manifesto-dot"></span>You are not broken. You are dysregulated. There is a profound difference.</li>
+      <li><span class="manifesto-dot"></span>Access to this approach should not be gated by income. Crave is free.</li>
+    </ul>
+  </section>
+
+  <!-- What Crave is not -->
+  <section class="section section-dark">
+    <span class="section-label">Important distinctions</span>
+    <div class="two-col">
+      <div>
+        <h2 class="section-headline-light">What Crave<br><em>is not.</em></h2>
+        <p class="section-body-light">Knowing what something isn't is as important as knowing what it is. Crave is none of the following — and that's the point.</p>
+      </div>
+      <div>
+        <div class="card-grid" style="grid-template-columns:1fr 1fr;gap:12px;margin-top:0">
+          <div class="card-dark"><div class="card-title-light" style="font-size:13px">❌ Not a diet</div></div>
+          <div class="card-dark"><div class="card-title-light" style="font-size:13px">❌ Not a meal plan</div></div>
+          <div class="card-dark"><div class="card-title-light" style="font-size:13px">❌ Not a tracker</div></div>
+          <div class="card-dark"><div class="card-title-light" style="font-size:13px">❌ Not a habit app</div></div>
+          <div class="card-dark"><div class="card-title-light" style="font-size:13px">❌ Not a supplement</div></div>
+          <div class="card-dark"><div class="card-title-light" style="font-size:13px">❌ Not willpower</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================================================ METHOD -->
+<div id="page-method" class="page">
+
+  <section class="hero" style="min-height:65vh">
+    <svg class="hero-bg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" fill="none">
+      <path d="M-100 350 Q300 150 700 350 Q1000 510 1300 250" stroke="#8FA888" stroke-width="1.2"/>
+      <path d="M-100 430 Q400 230 800 430 Q1100 590 1300 330" stroke="#C4927A" stroke-width="0.7"/>
+    </svg>
+    <div class="hero-content" style="padding-top:160px">
+      <p class="hero-eyebrow">The Crave Method</p>
+      <h1 class="hero-headline" style="font-size:clamp(40px,6vw,72px)">
+        Going to the source —<br>not the <em>symptom.</em>
+      </h1>
+      <p class="hero-sub">Most approaches manage food behavior at the surface. The Crave method addresses the nervous system state that drives the behavior — the layer where change actually sticks.</p>
+    </div>
+  </section>
+
+  <!-- The science -->
+  <section class="section">
+    <span class="section-label">Why this works</span>
+    <div class="two-col-wide">
+      <div>
+        <h2 class="section-headline">The compulsion lives<br>below <em>conscious control.</em></h2>
+        <p class="section-body">When stress activates the nervous system, the brain does exactly what it's designed to do: it scans for the fastest available relief. For many people, food has become that relief — not by choice, but by repetition. The brain learned. The pattern became automatic.</p>
+        <p class="section-body" style="margin-top:20px">This is a subcortical process. It completes before the prefrontal cortex — the seat of willpower and conscious decision-making — even registers what's happening. By the time you "decide" to eat, the decision has already been made at a deeper level.</p>
+        <p class="section-body" style="margin-top:20px">This is why willpower fails. Not because you lack it — but because you're bringing a conscious tool to an unconscious process. The tool was never designed to reach that layer.</p>
+        <p class="section-body" style="margin-top:20px">The Crave method works directly with the nervous system's own regulation pathways. It doesn't suppress or distract from the compulsion — it addresses the underlying activation that generates it. When the activation resolves, the signal quiets. Sometimes within a single session.</p>
+      </div>
+      <div>
+        <div class="pull-quote">
+          "You weren't failing at the method. The method was failing you."
+        </div>
+        <div class="tag-row">
+          <span class="tag-pill">Nervous system regulation</span>
+          <span class="tag-pill">Polyvagal-informed</span>
+          <span class="tag-pill">Somatic approach</span>
+          <span class="tag-pill">No cognitive override</span>
+          <span class="tag-pill">Root cause</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- How it works -->
+  <section class="section section-alt">
+    <span class="section-label">The practice</span>
+    <h2 class="section-headline">How a session<br><em>actually works.</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Rate your craving intensity</div>
+          <div class="step-body">Before anything else, you check in. Where is the craving on a scale of 0 to 10? This isn't about judgment — it's about creating a before point so you can see what changes.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Answer a few short questions</div>
+          <div class="step-body">The questionnaire identifies which layer of the protocol you're working with today. Different emotional states and different stages of the process call for different practices. The questions do the routing.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Watch your assigned practice</div>
+          <div class="step-body">A short guided video — typically 2 minutes — walks you through the nervous system regulation practice matched to your current state. Nothing is required of you except attention and willingness.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Rate your craving again</div>
+          <div class="step-body">After the practice, you rate again. The difference — however large or small — is real data about your nervous system responding. Over time this data becomes your most powerful evidence that something is genuinely changing.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Return to your day</div>
+          <div class="step-body">That's it. No homework. No journaling. No behavior contract. Just a 2-minute practice and a data point. The changes happen gradually, between sessions, as the nervous system learns a new baseline.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to expect dark -->
+  <section class="section section-dark">
+    <span class="section-label">What to expect</span>
+    <h2 class="section-headline-light" style="max-width:600px">Results that feel different<br>from anything <em>you've tried.</em></h2>
+    <div class="card-grid" style="margin-top:48px">
+      <div class="card-dark">
+        <div class="card-title-light">First session</div>
+        <div class="card-body-light">Most people notice something subtle — a breath that goes a little deeper, a slight drop in the urgency. Some notice nothing at first. Both are fine. The nervous system is responding either way.</div>
+      </div>
+      <div class="card-dark">
+        <div class="card-title-light">First week</div>
+        <div class="card-body-light">The craving may still arise, but its quality begins to shift. A small gap appears between the impulse and the action. That gap is the nervous system learning it has another option.</div>
+      </div>
+      <div class="card-dark">
+        <div class="card-title-light">First month</div>
+        <div class="card-body-light">The gap widens. People describe cravings arising and then fading on their own — not because they resisted, but because the underlying activation had somewhere to go. The compulsion becomes optional.</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================================================ COMMUNITY -->
+<div id="page-community" class="page">
+
+  <section class="hero" style="min-height:60vh">
+    <svg class="hero-bg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" fill="none">
+      <path d="M-100 280 Q300 80 700 280 Q1000 440 1300 180" stroke="#8FA888" stroke-width="1.2"/>
+      <path d="M-100 360 Q400 160 800 360 Q1100 520 1300 260" stroke="#C4927A" stroke-width="0.7"/>
+    </svg>
+    <div class="hero-content" style="padding-top:160px">
+      <p class="hero-eyebrow">The Crave Community</p>
+      <h1 class="hero-headline" style="font-size:clamp(40px,6vw,72px)">
+        A room full of people<br>done <em>fighting themselves.</em>
+      </h1>
+      <p class="hero-sub">Free. No credit card. No obligation. Just a community built around a method that actually goes to the root.</p>
+      <a class="btn-primary">Join free on Whop</a>
+    </div>
+  </section>
+
+  <!-- What's inside -->
+  <section class="section">
+    <span class="section-label">What's inside</span>
+    <div class="two-col">
+      <div>
+        <h2 class="section-headline">Everything you need.<br>Nothing you <em>don't.</em></h2>
+        <p class="section-body">The Crave community is built to give you the method, the support, and the evidence — without the overwhelm of another program demanding everything from you.</p>
+        <ul class="feature-list" style="margin-top:32px">
+          <li>The full Crave method — step by step, in plain language</li>
+          <li>Guided practice videos matched to your current layer</li>
+          <li>A session tracker that logs your before/after craving scores over time</li>
+          <li>Daily check-ins — a low-pressure place to land every day</li>
+          <li>A space for wins, however small</li>
+          <li>A space for hard days, without judgment</li>
+          <li>Direct access to ask questions and get real answers</li>
+          <li>Member stories from people further along in the process</li>
+        </ul>
+      </div>
+      <div>
+        <div class="pull-quote">
+          "The moment I understood it was my nervous system — not my character — the shame lifted. And when the shame lifted, so did the compulsion."
+        </div>
+        <div class="badge" style="margin-top:24px">Community member</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- Community values dark -->
+  <section class="section section-dark">
+    <span class="section-label">How we show up here</span>
+    <h2 class="section-headline-light" style="max-width:580px">The culture of<br>this <em>community.</em></h2>
+    <div class="card-grid" style="margin-top:48px">
+      <div class="card-dark">
+        <div class="card-title-light">No blame. Ever.</div>
+        <div class="card-body-light">The Crave community operates on one foundational premise: this is not your fault. That's not a platitude — it's a scientific position. And it shapes every conversation here.</div>
+      </div>
+      <div class="card-dark">
+        <div class="card-title-light">Small things count.</div>
+        <div class="card-body-light">A win here is not "I stopped stress eating entirely." A win is noticing the urge before acting on it. A win is doing the practice three days in a row. We celebrate the increments.</div>
+      </div>
+      <div class="card-dark">
+        <div class="card-title-light">Hard days belong here too.</div>
+        <div class="card-body-light">There is a channel called Hard Days. It exists because healing isn't linear. If you ate and feel like you're back at zero — you're not. You're still here. So are we.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free -->
+  <section class="section" style="text-align:center">
+    <span class="section-label" style="display:block;text-align:center">Free forever · No upsells</span>
+    <h2 class="section-headline" style="max-width:560px;margin:0 auto 20px">
+      The only thing required<br>is <em>showing up.</em>
+    </h2>
+    <p class="section-body" style="margin:0 auto 16px;text-align:center;max-width:480px">
+      Crave is free because access to this approach shouldn't be gated by income. There are no premium tiers. No upsells. No paid courses hidden behind the free content.
+    </p>
+    <p class="section-body" style="margin:0 auto 40px;text-align:center;max-width:480px">
+      Just the method. The community. And the evidence — session by session — that something is genuinely changing.
+    </p>
+    <a class="btn-primary">Join Crave on Whop — it's free</a>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">crav<span class="e">e</span></div>
+  <div class="footer-tagline">It was never about the food. © Crave 2025</div>
+</footer>
+
+<script>
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.getElementById('nav-' + name).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
